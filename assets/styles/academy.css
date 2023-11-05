@@ -126,7 +126,7 @@ section {
 .header {
 	position: fixed;
 	width: 100%;
-    background-color: transparent;
+	background-color: transparent;
 	top: 0;
 	left: 0;
 	z-index: var(--z-fixed);
@@ -141,51 +141,62 @@ section {
 }
 
 .nav__logo {
-    text-transform: uppercase;
+	text-transform: uppercase;
 	font-weight: var(--font-semib);
-    color: var(--title-color);
+	color: var(--title-color);
 }
 
 .nav__list {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.25rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1.25rem;
 }
 
 .nav__link {
-    color: var(--title-color);
-    font-weight: var(--font-med);
+	padding: 0.5rem 6rem;
+    border-radius: 0.125rem;
+	color: var(--title-color);
+	font-weight: var(--font-med);
+    transition: all ease 0.5s;
 }
 
-.nav__close, .nav__toggle {
-    display: flex;
-    font-size: 1.25rem;
-    color: var(--title-color);
-    cursor: pointer;
+.nav__close,
+.nav__toggle {
+	display: flex;
+	font-size: 1.25rem;
+	color: var(--title-color);
+	cursor: pointer;
 }
 
 .nav__close {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-
+	position: absolute;
+	top: 1rem;
+	right: 1.5rem;
 }
-
 
 @media screen and (max-width: 63.75rem) {
 	.nav__menu {
 		position: fixed;
 		top: -100%;
 		left: 0;
-        /* background-color: rgba(46, 148, 85, 0.5); */
-        background-color: var(--second-color);
-        width: 100%;
-        border-bottom-left-radius: 2rem;
-        border-bottom-right-radius: 2rem;
-        padding-block: 4rem;
-        backdrop-filter: blur(1.5rem);
-        -webkit-backdrop-filter: blur(1.5rem);
-        transition: top 0.5s;
-    }
+		/* background-color: rgba(46, 148, 85, 0.5); */
+		background-color: var(--second-color);
+		width: 100%;
+		border-bottom-left-radius: 2rem;
+		border-bottom-right-radius: 2rem;
+		padding-block: 4rem;
+		backdrop-filter: blur(1.5rem);
+		-webkit-backdrop-filter: blur(1.5rem);
+		transition: top 0.5s;
+	}
+    
+	.nav__link:hover {
+        color: white;
+		background: rgba(51, 168, 40, 0.445);
+		
+	}
+}
+.show__menu {
+	top: 0;
 }
