@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Inter:wght@400;500;600&display=swap');
+
+/* CSS variables */
+:root {
+	--header-height: 3.5rem;
+
+	/* alt color is the lighter of the first color */
+	--first-color: #006400;
+	--second-color: #ffd60a;
+	--alt-first-color: #9ef01a;
+	--title-color: #006400;
+	--text-color: #f8f9fa;
+	--body-color: #f4fc9f;
+
+	--body-font: 'Inter', sans-serif;
+	--xl-font: 2.8rem;
+	--h1-font-size: 1.5rem;
+	--h2-font-size: 1.25rem;
+	--h3-font-size: 1rem;
+	--n-font: 0.95rem;
+	--s-font: 0.825rem;
+	--xs-font: 0.75rem;
+	--font-med: 500;
+	--font-semib: 600;
+
+	--z-tooltip: 10;
+	--z-fixed: 100;
+}
+
+/* responsive on larger screens */
+@media screen and (min-width: 1100px) {
+	:root {
+		--xl-font: 5.5rem;
+		--l-font: 2rem;
+		--n-font: 1rem;
+		--s-font: 0.875rem;
+		--xs-font: 0.8rem;
+		--h1-font-size: 2.5rem;
+		--h2-font-size: 1.5rem;
+		--h3-font-size: 1.25rem;
+	}
+}
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body,
+button,
+input {
+	font-family: var(--body-font);
+	font-size: var(--n-font);
+	color: var(--text-color);
+}
+
+body {
+	background-color: var(--body-color);
+	color: var(--text-color);
+}
+
+button,
+input {
+	outline: none;
+	border: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	color: var(--title-color);
+	font-weight: var(--font-semib);
+}
+
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+    display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+
+/* reusable classes */
+
+.bd-container {
+    max-width: 68.75rem;
+	margin-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+section {
+    padding-block: 5rem 1rem;
+}
+
+.section__title {
+    text-align: center;
+    font-size: var(--h1-font-size);
+    m
+    argin-bottom: 1.5rem;
+}
+.main {
+    overflow: hidden;  /*for animation scroll reveal*/
+    
+    position: relative;
+}
+
+
+
+/* header styles */
+.header {
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: var(--z-fixed);
+}
+
+.nav {
+	max-width: 968px;
+	height: var(--header-height);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media screen and (max-width: 968px) {
+	.nav-menu {
+		position: fixed;
+		top: 4rem;
+		left: 0;
+	}
+}
