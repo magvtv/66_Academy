@@ -6,7 +6,7 @@
 
 	/* alt color is the lighter of the first color */
 	--first-color: #006400;
-	--second-color: #ffd60a;
+	--second-color: #ffd817bd;
 	--alt-first-color: #9ef01a;
 	--title-color: #006400;
 	--text-color: #f8f9fa;
@@ -80,73 +80,112 @@ h4 {
 	font-weight: var(--font-semib);
 }
 
-
 ul {
 	list-style-type: none;
 }
 
 a {
+	text-transform: uppercase;
+	font-weight: var(--font-semib);
 	text-decoration: none;
 }
 
 img {
-    display: block;
+	display: block;
 	max-width: 100%;
 	height: auto;
 }
 
-
 /* reusable classes */
 
-.bd-container {
-    max-width: 68.75rem;
+.bd__container {
+	max-width: 68.75rem;
 	margin-inline: 1.5rem;
 }
 
 .grid {
-    display: grid;
-    gap: 1.5rem;
+	display: grid;
+	gap: 1.5rem;
 }
 
 section {
-    padding-block: 5rem 1rem;
+	padding-block: 5rem 1rem;
 }
 
 .section__title {
-    text-align: center;
-    font-size: var(--h1-font-size);
-    m
-    argin-bottom: 1.5rem;
+	text-align: center;
+	font-size: var(--h1-font-size);
+	margin-bottom: 1.5rem;
 }
 .main {
-    overflow: hidden;  /*for animation scroll reveal*/
-    
-    position: relative;
+	overflow: hidden; /*for animation scroll reveal*/
+	position: relative;
 }
-
-
 
 /* header styles */
 .header {
-	width: 100%;
 	position: fixed;
+	width: 100%;
+    background-color: transparent;
 	top: 0;
 	left: 0;
 	z-index: var(--z-fixed);
 }
 
 .nav {
-	max-width: 968px;
 	height: var(--header-height);
+	/* max-width: 968px; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
 
-@media screen and (max-width: 968px) {
-	.nav-menu {
+.nav__logo {
+    text-transform: uppercase;
+	font-weight: var(--font-semib);
+    color: var(--title-color);
+}
+
+.nav__list {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.25rem;
+}
+
+.nav__link {
+    color: var(--title-color);
+    font-weight: var(--font-med);
+}
+
+.nav__close, .nav__toggle {
+    display: flex;
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+
+.nav__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+
+}
+
+
+@media screen and (max-width: 63.75rem) {
+	.nav__menu {
 		position: fixed;
-		top: 4rem;
+		top: -100%;
 		left: 0;
-	}
+        /* background-color: rgba(46, 148, 85, 0.5); */
+        background-color: var(--second-color);
+        width: 100%;
+        border-bottom-left-radius: 2rem;
+        border-bottom-right-radius: 2rem;
+        padding-block: 4rem;
+        backdrop-filter: blur(1.5rem);
+        -webkit-backdrop-filter: blur(1.5rem);
+        transition: top 0.5s;
+    }
 }
